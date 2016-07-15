@@ -1,4 +1,5 @@
-
+(ns re-frame-forward-events-fx.core
+  (:require [re-frame.core]))
 
 
 (register
