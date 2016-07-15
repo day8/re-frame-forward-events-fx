@@ -1,12 +1,13 @@
 > Status:  still under development. Don't use yet.
 
-# re-frame-forward-events-fx
 
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)   
 [![Clojars Project](https://img.shields.io/clojars/v/re-frame-forward-events-fx/latest-version.svg)](https://clojars.org/re-frame-forward-events-fx)  
 master:  [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master)  
 develop: [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop)  
 [![Sample Project](https://img.shields.io/badge/project-example-ff69b4.svg)](https://github.com/Day8/re-frame-forward-events-fx/sample)
+
+# re-frame-forward-events-fx
 
 Herein a re-frame effects handler, named `:forward-events`, which allows you to listen-for and then post-process events, typically for higher-level control flow purposes (eg. coordination)
 
@@ -84,3 +85,6 @@ Examples:
 ```clj
 {:forward-events  {:unregister :the-id-supplied-when-registering}}
 ```
+
+In theory, the value can be a `list` of `maps`.  Each map either registering or unregistering. 
+
