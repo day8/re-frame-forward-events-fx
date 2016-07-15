@@ -77,9 +77,9 @@ So, if you registered a "listener" for event `:a`  and you gave a `::dispatch-to
 Examples:
 
 ```clj
-{:forward-events  {:register    :an-id-for-this-listner
+{:forward-events {:register    :an-id-for-this-listner
                   :events      #{:event1  :event2}
-                  :dispatch-to [:later "blah"]}     ;; the forwared event will be conj to the end of this event vec
+                  :dispatch-to [:later "blah"]}    ;; the forwared event is conj to the end of this event vec
 ```
 
 ```clj
