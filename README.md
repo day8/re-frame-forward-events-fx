@@ -59,23 +59,22 @@ the registered handler for `:a`, and that's the end of the matter.
 
 BUT, with this effect, you can specify that a particular set of events be
 forwarded to another handler for further processing AFTER normal handling.
-This  2nd handler can then further process the events.
+This  2nd handler can then further process the events, often carriing out some sort of meta level, coordination function. 
 
-This "fowarding" is done via a further dispatch. The payload of this dipatch
-is the event just detected.
+The "fowarding" is done via a 2nd dispatch. The payload of this dipatch
+is the entire event dispatched in the first place. 
 
-You provide the following keys:
-  - `:register` - mandatory - an id  (useful for then you want to later unregister this feature). Should be unique across all           `:forward-event` effects.
+`:forward-events` accpets the following keys (all mandatory):
+  - `:register` - an id, typically a keyword. Used when you later what to unregister a forwarder).Should be unique across all           `:forward-event` effects.
   - `:events` - the set of events for which you'd like to "listen"
   - `:dispatch-to` a vector which is the "further event" to dispatch.  The detected event is given as the final parameter.
 
-So, if you registered a "listener" for event `:a`  and you gave a `::dispatch-to` of `[:later :blah]`, then:
-  - when a `(dispatch [:a 42])` happend, 
-  - the handler for `:a` would be run normally. No change there. 
+For clarity, here's a worked example. If you registered a ":forward-events" for event `:a`  and you gave a `:dispatch-to` of `[:later :blah]`, then:
+  - when if any `(dispatch [:a 42])` happend, 
+  - the handler for `:a` would be run normally. No change so far. 
   - but then a further dispatch would be happen:  `(dispatch [:later :blah [:a 42]])`. The entire first event `[:a 42]` is "forwarded" in the further `dispatch`.
 
-Examples:
-
+Examples of use:
 ```clj
 {:forward-events {:register    :an-id-for-this-listner
                   :events      #{:event1  :event2}
@@ -86,5 +85,5 @@ Examples:
 {:forward-events  {:unregister :the-id-supplied-when-registering}}
 ```
 
-In theory, the value can be a `list` of `maps`.  Each map either registering or unregistering. 
+The value of `:forward-events` can be a `list` of `maps`, with each map either registering or unregistering. 
 
