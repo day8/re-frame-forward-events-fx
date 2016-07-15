@@ -20,9 +20,9 @@ Add the following project dependency:
 
 ### Step 2. Registration And Use
 
-In the namespace where you register your event handlers, perhaps called `events.cljs` you have 2 things to do.
+In the namespace where you register your event handlers, perhaps called `events.cljs`, you have 2 things to do.
 
-**First**, add this require:
+**First**, add this require to the `ns`:
 ```clj
 (ns app.events
   (:require 
@@ -36,7 +36,7 @@ appears redundant.  But the require will cause the `:forward-events` effect
 handler to self-register with re-frame, which is important
 to everything that follows.
 
-**Second**, use it when wirting an effectful event handler: 
+**Second**, use it when writting an effectful event handler: 
 ```clj
 (def-event-fx             ;; note the -fx
   :my-event
