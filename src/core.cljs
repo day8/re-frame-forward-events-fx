@@ -2,7 +2,7 @@
   (:require [re-frame.core]))
 
 
-(register
+(re-frame.core/reg-fx
   :forward-events
   (let [id->listen-fn (atom {})
         process-one-entry (fn [{:as m :keys [unlisten listen events dispatch-to]}]
