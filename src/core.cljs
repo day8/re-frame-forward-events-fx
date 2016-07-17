@@ -10,8 +10,9 @@
                                   _  (assert (or (= #{:unlisten} (-> m keys set))
                                                  (= #{:listen :events :dispatch-to} (-> m keys set))) "re-frame: effects handler for :forward-events given wrong map keys")]
                               (if unlisten
-                                (do
-                                  (re-frame.core/remove-post-event-callback (@id->listen-fn unlisten))
+                                (let [f (@id->listen-fn unlisten)
+                                      _  (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " id))]
+                                  (re-frame.core/remove-post-event-callback f)
                                   (swap! id->listen-fn dissoc unlisten))
                                 (let [post-event-callback-fn  (fn [event-v _]
                                                                 (when (events (first event-v))
@@ -21,5 +22,6 @@
     (fn [val]
       (cond
         (map? val) (process-one-entry val)
-        (list? val) (doall (map process-one-entry val)))     ;; XXX add else
+        (list? val) (doall (map process-one-entry val))
+        :else (js/console.error  ":forward-events expected a map or a list of maps, but got: " val))
       )))
