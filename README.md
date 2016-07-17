@@ -11,15 +11,15 @@
 # re-frame-forward-events-fx
 
 Herein a re-frame ["effects handler"](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
-`:forward-events`, which allows you to listen-for and then post-process events, typically for higher-level 
+`:forward-events`, which allows you to listen-for and then post-process events, typically for higher-level
 control flow purposes (eg. coordination).
 
 ## Quick Start Guide
 
 ### Step 1. Add Dependency
 
-Add the following project dependency:  
-[![Clojars Project](https://img.shields.io/clojars/v/re-frame-forward-events-fx/latest-version.svg)](https://clojars.org/re-frame-async-flow-fx)
+Add the following project dependency:
+[![Clojars Project](https://img.shields.io/clojars/v/re-frame-forward-events-fx/latest-version.svg)](https://clojars.org/re-frame-forward-events-fx)
 
 ### Step 2. Registration And Use
 
@@ -28,19 +28,19 @@ In the namespace where you register your event handlers, perhaps called `events.
 **First**, add this require to the `ns`:
 ```clj
 (ns app.events
-  (:require 
+  (:require
     ...
     [re-frame-forward-events-fx]   ;; <-- add this
     ...))
 ```
 
 
-Because we never subsequently use this require, it 
-appears redundant.  But its existence will cause the `:forward-events` effect 
+Because we never subsequently use this require, it
+appears redundant.  But its existence will cause the `:forward-events` effect
 handler to self-register with re-frame, which is important
 to everything that follows.
 
-**Second**, use it when writing an effectful event handler: 
+**Second**, use it when writing an effectful event handler:
 ```clj
 (def-event-fx             ;; note the -fx
   :my-event
@@ -51,11 +51,11 @@ to everything that follows.
                        :dispatch-to [:coordinator 1]}}))
 ```
 
-Notice the use of an effect `:forward-event`.  This library defines the "effect handler" which implements `:forward-events`. 
+Notice the use of an effect `:forward-event`.  This library defines the "effect handler" which implements `:forward-events`.
 
-## Tutorial 
+## Tutorial
 
-This effects handler provides a way to "forward" events. To put it another way, 
+This effects handler provides a way to "forward" events. To put it another way,
 it provides a way to listen-for and then post-process events. Some might say it allows you to "sniffing" events.
 
 Normally, when `(dispatch [:a 42])` happens the event will be routed to
@@ -63,21 +63,21 @@ the registered handler for `:a`, and that's the end of the matter.
 
 BUT, with this effect, you can specify that a particular set of events be
 forwarded to another handler for further processing AFTER normal handling.
-This  2nd handler can then further process the events, often carrying out 
-some sort of meta level, coordination function. 
+This  2nd handler can then further process the events, often carrying out
+some sort of meta level, coordination function.
 
 The "forwarding" is done via a 2nd dispatch. The payload of this `dispatch`
-is the entire event dispatched in the first place. 
+is the entire event dispatched in the first place.
 
 `:forward-events` accepts the following keys (all mandatory):
   - `:register` - an id, typically a keyword. Used when you later what to unregister a forwarder. Should be unique across all `:forward-event` effects.
   - `:events` - the set of events for which you'd like to "listen"
-  - `:dispatch-to` a vector which represents the template for the "further event" to dispatch.  The 
+  - `:dispatch-to` a vector which represents the template for the "further event" to dispatch.  The
     detected event is provided (conj-ed) to this event template.
 
 For clarity, here's a worked example. If you registered a ":forward-events" for event `:a`  and you gave a `:dispatch-to` of `[:later :blah]`, then:
-  - when if any `(dispatch [:a 42])` happened, 
-  - the handler for `:a` would be run normally. No change so far. 
+  - when if any `(dispatch [:a 42])` happened,
+  - the handler for `:a` would be run normally. No change so far.
   - but then a further dispatch would be happen:  `(dispatch [:later :blah [:a 42]])`. The entire first event `[:a 42]` is "forwarded" in the further `dispatch`.
 
 Examples of use:
@@ -91,6 +91,6 @@ Examples of use:
 {:forward-events  {:unregister :the-id-supplied-when-registering}}
 ```
 
-When necessary, the value of `:forward-events` can also be a `list` of `maps`, 
-with each map either registering or unregistering. 
+When necessary, the value of `:forward-events` can also be a `list` of `maps`,
+with each map either registering or unregistering.
 

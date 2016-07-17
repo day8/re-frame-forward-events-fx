@@ -1,4 +1,4 @@
-# Contributing to re-frame-async-flow-fx
+# Contributing to re-frame-forward-events-fx
 
 Thank you for taking the time to contribute!
 
@@ -26,8 +26,8 @@ You can also get auto compiles via:
 ```sh
 lein test-auto
 ```
-but you'll need to manually open `test/test.html` in a browser. And you'll also need to 
-manually reload this page after each auto compile. 
+but you'll need to manually open `test/test.html` in a browser. And you'll also need to
+manually reload this page after each auto compile.
 
 #### Via Karma
 
@@ -37,7 +37,7 @@ Visual Studio Community Edition, and the C++ compiler dependencies.
 
 ```sh
 lein deps       # runs lein-npm, installs Karma & other node dependencies. Only needed the first time.
-lein karma-once # to build re-frame-async-flow-fx tests
+lein karma-once # to build re-frame-forward-events-fx tests
 karma start     # to run the tests with an auto watcher
 ```
 

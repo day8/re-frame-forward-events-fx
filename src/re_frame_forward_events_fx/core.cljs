@@ -1,8 +1,8 @@
 (ns re-frame-forward-events-fx.core
-  (:require [re-frame.core]))
+  (:require [re-frame.core :as re-frame]))
 
 
-(re-frame.core/reg-fx
+(re-frame/def-fx
   :forward-events
   (let [id->listen-fn (atom {})
         process-one-entry (fn [{:as m :keys [unlisten listen events dispatch-to]}]
@@ -12,12 +12,12 @@
                               (if unlisten
                                 (let [f (@id->listen-fn unlisten)
                                       _  (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " id))]
-                                  (re-frame.core/remove-post-event-callback f)
+                                  (re-frame/remove-post-event-callback f)
                                   (swap! id->listen-fn dissoc unlisten))
                                 (let [post-event-callback-fn  (fn [event-v _]
                                                                 (when (events (first event-v))
-                                                                  (dispatch (conj dispatch-to event-v))))]
-                                  (re-frame.core/add-post-event-callback  post-event-callback-fn)
+                                                                  (re-frame/dispatch (conj dispatch-to event-v))))]
+                                  (re-frame/add-post-event-callback  post-event-callback-fn)
                                   (swap! id->listen-fn assoc listen post-event-callback-fn)))))]
     (fn [val]
       (cond
