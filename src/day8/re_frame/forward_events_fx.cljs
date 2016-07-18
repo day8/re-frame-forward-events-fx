@@ -1,4 +1,4 @@
-(ns re-frame-forward-events-fx.core
+(ns day8.re-frame.forward-events-fx
   (:require [re-frame.core]))
 
 
@@ -16,7 +16,7 @@
                                   (swap! id->listen-fn dissoc unlisten))
                                 (let [post-event-callback-fn  (fn [event-v _]
                                                                 (when (events (first event-v))
-                                                                  (dispatch (conj dispatch-to event-v))))]
+                                                                  (re-frame.core/dispatch (conj dispatch-to event-v))))]
                                   (re-frame.core/add-post-event-callback  post-event-callback-fn)
                                   (swap! id->listen-fn assoc listen post-event-callback-fn)))))]
     (fn [val]
