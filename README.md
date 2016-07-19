@@ -1,4 +1,4 @@
-> Status:  still under development. Don't use yet.
+> Status: requires re-frame >= v0.8.0-alpha2
 
 
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
