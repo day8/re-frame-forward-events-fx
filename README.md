@@ -1,6 +1,7 @@
 > Status:  still under development. Don't use yet.
 
-[![Clojars Project](https://img.shields.io/clojars/v/re-frame-forward-events-fx/latest-version.svg)](https://clojars.org/re-frame-forward-events-fx)
+
+[![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop)
