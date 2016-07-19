@@ -11,7 +11,7 @@ module.exports = function (config) {
         ],
 
         client: {
-            args: ['day8.re-frame.forward-events-fx.test_runner.run_karma']
+            args: ['day8.re_frame.forward_events_fx.test_runner.run_karma']
         },
 
         // the default configuration
