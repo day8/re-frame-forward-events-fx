@@ -11,8 +11,8 @@
 
 # re-frame-forward-events-fx
 
-Herein a re-frame ["effects handler"](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
-`:forward-events`, which allows you to listen-for and then post-process events, typically for higher-level
+Herein a re-frame [[Effects Handler]](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
+`:forward-events`, which allows you to listen-for, and then post-process events, typically for higher-level
 control flow purposes (eg. coordination).
 
 ## Quick Start Guide
@@ -32,7 +32,7 @@ In the namespace where you register your event handlers, perhaps called `events.
 (ns app.events
   (:require
     ...
-    [day8.re-frame/forward-events-fx]   ;; <-- add this
+    [day8.re-frame.forward-events-fx]   ;; <-- add this
     ...))
 ```
 
