@@ -19,8 +19,9 @@ control flow purposes (eg. coordination).
 
 ### Step 1. Add Dependency
 
-Add the following project dependency:
-[![Clojars Project](https://img.shields.io/clojars/v/re-frame-forward-events-fx/latest-version.svg)](https://clojars.org/re-frame-forward-events-fx)
+Add the following project dependency:  
+[![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
+
 
 ### Step 2. Registration And Use
 
