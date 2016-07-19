@@ -30,7 +30,7 @@ In the namespace where you register your event handlers, perhaps called `events.
 (ns app.events
   (:require
     ...
-    [re-frame-forward-events-fx]   ;; <-- add this
+    [day8.re-frame/forward-events-fx]   ;; <-- add this
     ...))
 ```
 
