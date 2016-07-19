@@ -4,7 +4,7 @@
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure        "1.8.0"]
                  [org.clojure/clojurescript  "1.9.89"]
-                 [re-frame                   "0.8.0-SNAPSHOT"]]
+                 [re-frame                   "0.8.0-alpha2"]]
 
   :profiles {:debug {:debug true}
              :dev   {:dependencies [[karma-reporter     "0.3.0"]
@@ -24,8 +24,17 @@
                                       :macosx  "open"
                                       :linux   "xdg-open"}}}
 
-  :deploy-repositories [["releases" :clojars {:sign-releases false}]
-                        ["snapshots" :clojars {:sign-releases false}]]
+  :deploy-repositories [["releases"  {:sign-releases false :url "https://clojars.org/repo"}]
+                        ["snapshots" {:sign-releases false :url "https://clojars.org/repo"}]]
+
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag" "v" "--no-sign"]
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]]
 
   :npm {:dependencies [[karma                 "1.0.0"]
                        [karma-cljs-test       "0.1.0"]
