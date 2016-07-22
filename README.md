@@ -1,7 +1,6 @@
 > Status: requires re-frame >= v0.8.0-alpha2
 
 
-[![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop)
@@ -19,7 +18,7 @@ control flow purposes (eg. coordination).
 
 ### Step 1. Add Dependency
 
-Add the following project dependency:  
+Add the following project dependency:  <br> 
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 
 
