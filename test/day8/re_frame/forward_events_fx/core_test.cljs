@@ -1,5 +1,5 @@
 (ns day8.re-frame.forward-events-fx.core-test
-  (:require [cljs.test :refer-macros [is deftest]]
+  (:require [cljs.test :refer-macros [is deftest async]]
             [day8.re-frame.forward-events-fx]
             [re-frame.core :as re-frame]
             [re-frame.router]))
@@ -10,26 +10,26 @@
                              (swap! dispatched-events conj event))]
 
     ;; setup effects handler
-    (re-frame/def-event-fx
+    (re-frame/reg-event-fx
       :register-test
       (fn [world event]
         {:forward-events {:register  :my-id
                           :events     #{:1  :2 :11 :22}
                           :dispatch-to [:later :on ]}}))
 
-    (re-frame/def-event-fx
+    (re-frame/reg-event-fx
       :unregister-test
       (fn [world event]
         {:forward-events {:unregister  :my-id}}))
 
-    (re-frame/def-event :1 (fn [db _] db))
-    (re-frame/def-event :2 (fn [db _] db))
-    (re-frame/def-event :3 (fn [db _] db))
-    (re-frame/def-event :4 (fn [db _] db))
-    (re-frame/def-event :11 (fn [db _] db))
-    (re-frame/def-event :22 (fn [db _] db))
+    (re-frame/reg-event :1 (fn [db _] db))
+    (re-frame/reg-event :2 (fn [db _] db))
+    (re-frame/reg-event :3 (fn [db _] db))
+    (re-frame/reg-event :4 (fn [db _] db))
+    (re-frame/reg-event :11 (fn [db _] db))
+    (re-frame/reg-event :22 (fn [db _] db))
 
-    (re-frame/def-event :later (fn [db _] db))
+    (re-frame/reg-event :later (fn [db _] db))
 
     (with-redefs [re-frame/dispatch fake-dispatch]
                  (re-frame/dispatch-sync [:register-test])

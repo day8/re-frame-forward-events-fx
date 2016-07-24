@@ -1,4 +1,4 @@
-> Status: requires re-frame >= v0.8.0-alpha2
+> Status: requires re-frame >= v0.8.0-alpha3
 
 
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
@@ -43,7 +43,7 @@ to everything that follows.
 
 **Second**, use it when writing an effectful event handler:
 ```clj
-(def-event-fx             ;; note the -fx
+(reg-event-fx             ;; note the -fx
   :my-event
   (fn [world event]       ;; note: world
     {:db   (assoc (:db world) :some :thing)          ;; optional update to db
