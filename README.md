@@ -1,4 +1,4 @@
-> Status: requires re-frame >= v0.8.0-alpha3
+> Status: requires re-frame >= v0.8.0-alpha9
 
 
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)

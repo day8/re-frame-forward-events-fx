@@ -4,10 +4,10 @@
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure        "1.8.0"]
                  [org.clojure/clojurescript  "1.9.89"]
-                 [re-frame                   "0.8.0-alpha3"]]
+                 [re-frame                   "0.8.0-alpha9"]]
 
   :profiles {:debug {:debug true}
-             :dev   {:dependencies [[karma-reporter     "0.3.0"]
+             :dev   {:dependencies [[karma-reporter     "1.0.1"]
                                     [binaryage/devtools "0.7.2"]]
                      :plugins      [[lein-cljsbuild     "1.1.3"]
                                     [lein-npm           "0.6.2"]
