@@ -1,4 +1,4 @@
-(defproject day8.re-frame/forward-events-fx "0.0.4-SNAPSHOT"
+(defproject day8.re-frame/forward-events-fx "0.0.4"
   :description  "A re-frame effects handler for listening-for and then post-processing dispatched events."
   :url          "https://github.com/Day8/re-frame-forward-events-fx.git"
   :license      {:name "MIT"}
