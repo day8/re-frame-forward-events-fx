@@ -71,7 +71,7 @@ The "forwarding" is done via a 2nd dispatch. The payload of this `dispatch`
 is the entire event dispatched in the first place.
 
 `:forward-events` accepts the following keys (all mandatory):
-  - `:register` - an id, typically a keyword. Used when you later what to unregister a forwarder. Should be unique across all `:forward-event` effects.
+  - `:register` - an id, typically a keyword. Used when you later want to unregister a forwarder. Should be unique across all `:forward-event` effects.
   - `:events` - the set of events for which you'd like to "listen"
   - `:dispatch-to` a vector which represents the template for the "further event" to dispatch.  The
     detected event is provided (conj-ed) to this event template.
