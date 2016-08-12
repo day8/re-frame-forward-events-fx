@@ -1,4 +1,3 @@
-> Status: requires re-frame >= v0.8.0-alpha9
 
 
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
@@ -21,6 +20,7 @@ control flow purposes (eg. coordination).
 Add the following project dependency:  <br> 
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 
+> also requires re-frame >= v0.8.0
 
 ### Step 2. Registration And Use
 
