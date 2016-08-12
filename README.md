@@ -10,7 +10,7 @@
 
 # re-frame-forward-events-fx
 
-Herein a re-frame [[Effects Handler]](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
+Herein a re-frame [Effects Handler](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
 `:forward-events`, which allows you to listen-for, and then post-process events, typically for higher-level
 control flow purposes (eg. coordination).
 
@@ -56,19 +56,19 @@ Notice the use of an effect `:forward-event`.  This library defines the "effect 
 
 ## Tutorial
 
-This effects handler provides a way to "forward" events. To put it another way,
-it provides a way to listen-for and then post-process events. Some might say it allows you to "sniffing" events.
+This effect handler provides a way to "forward" events. To put it another way,
+it provides a way to listen-for and then post-process events. Some might say it allows you to "sniff" certain events.
 
-Normally, when `(dispatch [:a 42])` happens the event will be routed to
+Normally, when `(dispatch [:a 42])` happens, the event will be routed to
 the registered handler for `:a`, and that's the end of the matter.
 
-BUT, with this effect, you can specify that a particular set of events be
-forwarded to another handler for further processing AFTER normal handling.
-This  2nd handler can then further process the events, often carrying out
+But, with this effect, you can specify that a particular set of events be
+forwarded to another handler for further processing __after__ normal handling.
+This 2nd handler can then further process the events, often carrying out
 some sort of meta level, coordination function.
 
 The "forwarding" is done via a 2nd dispatch. The payload of this `dispatch`
-is the entire event dispatched in the first place.
+is the __entire__ event dispatched in the first place.
 
 `:forward-events` accepts the following keys (all mandatory):
   - `:register` - an id, typically a keyword. Used when you later want to unregister a forwarder. Should be unique across all `:forward-event` effects.
