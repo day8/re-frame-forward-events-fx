@@ -1,5 +1,3 @@
-
-
 [![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master)
 [![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/develop)
@@ -9,8 +7,8 @@
 
 # re-frame-forward-events-fx
 
-Herein a re-frame [Effects Handler](https://github.com/Day8/re-frame/wiki/Effectful-Event-Handlers), keyed
-`:forward-events`, which allows you to listen-for, and then post-process events, typically for higher-level
+This re-frame library contains an [Effect Handler](https://github.com/Day8/re-frame/tree/develop/docs),
+keyed `:forward-events`, which allows you to listen-for, and then post-process events, typically for higher-level
 control flow purposes (eg. coordination).
 
 ## Quick Start Guide
@@ -20,7 +18,7 @@ control flow purposes (eg. coordination).
 Add the following project dependency:  <br> 
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 
-> also requires re-frame >= v0.8.0
+Also requires re-frame >= v0.8.0
 
 ### Step 2. Registration And Use
 
