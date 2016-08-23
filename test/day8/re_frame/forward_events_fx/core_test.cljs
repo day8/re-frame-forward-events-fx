@@ -22,14 +22,14 @@
       (fn [world event]
         {:forward-events {:unregister  :my-id}}))
 
-    (re-frame/reg-event :1 (fn [db _] db))
-    (re-frame/reg-event :2 (fn [db _] db))
-    (re-frame/reg-event :3 (fn [db _] db))
-    (re-frame/reg-event :4 (fn [db _] db))
-    (re-frame/reg-event :11 (fn [db _] db))
-    (re-frame/reg-event :22 (fn [db _] db))
+    (re-frame/reg-event-db  :1 (fn [db _] db))
+    (re-frame/reg-event-db  :2 (fn [db _] db))
+    (re-frame/reg-event-db  :3 (fn [db _] db))
+    (re-frame/reg-event-db  :4 (fn [db _] db))
+    (re-frame/reg-event-db  :11 (fn [db _] db))
+    (re-frame/reg-event-db  :22 (fn [db _] db))
 
-    (re-frame/reg-event :later (fn [db _] db))
+    (re-frame/reg-event-db  :later (fn [db _] db))
 
     (with-redefs [re-frame/dispatch fake-dispatch]
                  (re-frame/dispatch-sync [:register-test])

@@ -43,7 +43,9 @@
 
   :cljsbuild {:builds [{:id           "test"
                         :source-paths ["test" "src"]
-                        :compiler     {:output-to     "run/compiled/browser/test.js"
+                        :compiler     {:preloads             [devtools.preload]
+                                       :external-config      {:devtools/config {:features-to-install :all}}
+                                       :output-to     "run/compiled/browser/test.js"
                                        :source-map    true
                                        :output-dir    "run/compiled/browser/test"
                                        :optimizations :none
