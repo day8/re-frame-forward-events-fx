@@ -8,12 +8,21 @@
         process-one-entry (fn [{:as m :keys [unregister register events dispatch-to]}]
                             (let [_ (assert (map? m) (str "re-frame: effects handler for :forward-events expected a map or a list of maps. Got: " m))
                                   _ (assert (or (= #{:unregister} (-> m keys set))
-                                                (= #{:register :events :dispatch-to} (-> m keys set))) (str "re-frame: effects handler for :forward-events given wrong map keys" (-> m keys set)))]
-                              (if unregister
-                                (let [f (@id->listen-fn unregister)
-                                      _ (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " unregister))]
-                                  (re-frame/remove-post-event-callback f)
-                                  (swap! id->listen-fn dissoc unregister))
+                                                (= #{:register :events :dispatch-to} (-> m keys set))) (str "re-frame: effects handler for :forward-events given wrong map keys" (-> m keys set)))
+                                  unregister-fn (fn [unregister-id]
+                                                  (let [f (@id->listen-fn unregister-id)
+                                                        _ (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " unregister))]
+                                                    (re-frame/remove-post-event-callback f)
+                                                    (swap! id->listen-fn dissoc unregister-id)))]
+                              (cond
+                                (keyword? unregister)
+                                (unregister-fn unregister)
+
+                                (and unregister
+                                     (every? keyword? unregister))
+                                (doall (map unregister-fn unregister))
+
+                                :else
                                 (let [post-event-callback-fn (fn [event-v _]
                                                                (when (events (first event-v))
                                                                  (re-frame/dispatch (conj dispatch-to event-v))))]
