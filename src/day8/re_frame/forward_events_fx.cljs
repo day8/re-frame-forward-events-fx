@@ -5,13 +5,14 @@
 (re-frame/reg-fx
   :forward-events
   (let [id->listen-fn     (atom {})
-        process-one-entry (fn [{:as m :keys [unregister register events dispatch-to]}]
+        process-one-entry (fn [{:as m :keys [unregister register events dispatch-to silent-failure?]}]
                             (let [_ (assert (map? m) (str "re-frame: effects handler for :forward-events expected a map or a list of maps. Got: " m))
                                   _ (assert (or (= #{:unregister} (-> m keys set))
                                                 (= #{:register :events :dispatch-to} (-> m keys set))) (str "re-frame: effects handler for :forward-events given wrong map keys" (-> m keys set)))]
                               (if unregister
                                 (let [f (@id->listen-fn unregister)
-                                      _ (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " unregister))]
+                                      _ (when (not silent-failure?)
+                                          (assert (some? f) (str ":forward-events  asked to unregister an unknown id: " unregister)))]
                                   (re-frame/remove-post-event-callback f)
                                   (swap! id->listen-fn dissoc unregister))
                                 (let [post-event-callback-fn (fn [event-v _]

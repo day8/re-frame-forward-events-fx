@@ -22,6 +22,12 @@
       (fn [world event]
         {:forward-events {:unregister  :my-id}}))
 
+    (re-frame/reg-event-fx
+      :silently-unregister-non-existent
+      (fn []
+        {:forward-events {:unregister  :non-existent
+                          :silent-failure? true}}))
+
     (re-frame/reg-event-db  :1 (fn [db _] db))
     (re-frame/reg-event-db  :2 (fn [db _] db))
     (re-frame/reg-event-db  :3 (fn [db _] db))
@@ -39,6 +45,7 @@
                  (re-frame/dispatch-sync [:1])
                  (re-frame/dispatch-sync [:unregister-test])
                  (re-frame/dispatch-sync [:11])
-                 (re-frame/dispatch-sync [:22]))
+                 (re-frame/dispatch-sync [:22])
+                 (re-frame/dispatch-sync [:silently-unregister-non-existent]))
 
     (is (= @dispatched-events #{[:later :on [:1]]  [:later :on [:2]]}))))

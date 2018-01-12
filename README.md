@@ -90,6 +90,12 @@ Examples of use:
 {:forward-events  {:unregister :the-id-supplied-when-registering}}
 ```
 
+If you want to unregister watcher that you're not sure if exists, you can pass `:silent-failure?` to prevent throwing an error. 
+```clj
+{:forward-events  {:unregister :maybe-non-existent-id
+                   :silent-failure? true}}
+```
+
 When necessary, the value of `:forward-events` can also be a `list` of `maps`,
 with each map either registering or unregistering.
 
