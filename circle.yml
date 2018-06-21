@@ -3,6 +3,9 @@ dependencies:
     - npm install karma-cli -g
   cache_directories:
     - node_modules
+machine:
+  java:
+    version: oraclejdk8
 test:
   override:
     - lein karma-once
