@@ -2,15 +2,15 @@
   :description  "A re-frame effects handler for listening-for and then post-processing dispatched events."
   :url          "https://github.com/Day8/re-frame-forward-events-fx.git"
   :license      {:name "MIT"}
-  :dependencies [[org.clojure/clojure        "1.8.0"]
-                 [org.clojure/clojurescript  "1.9.89"]
-                 [re-frame                   "0.8.0"]]
+  :dependencies [[org.clojure/clojure        "1.8.0"  :scope "provided"]
+                 [org.clojure/clojurescript  "1.9.89" :scope "provided"]
+                 [re-frame                   "0.10.5" :scope "provided"]]
 
   :profiles {:debug {:debug true}
-             :dev   {:dependencies [[karma-reporter     "1.0.1"]
-                                    [binaryage/devtools "0.8.1"]]
-                     :plugins      [[lein-ancient       "0.6.10"]
-                                    [lein-cljsbuild     "1.1.4"]
+             :dev   {:dependencies [[karma-reporter     "3.1.0"]
+                                    [binaryage/devtools "0.9.10"]]
+                     :plugins      [[lein-ancient       "0.6.15"]
+                                    [lein-cljsbuild     "1.1.7"]
                                     [lein-npm           "0.6.2"]
                                     [lein-shell         "0.5.0"]]}}
 
@@ -37,15 +37,15 @@
                   ["vcs" "commit"]
                   ["vcs" "push"]]
 
-  :npm {:dependencies [[karma                 "1.0.0"]
-                       [karma-cljs-test       "0.1.0"]
-                       [karma-chrome-launcher "0.2.0"]
-                       [karma-junit-reporter  "0.3.8"]]}
+  :npm {:devDependencies [[karma                 "1.0.0"]
+                          [karma-cljs-test       "0.1.0"]
+                          [karma-chrome-launcher "0.2.0"]
+                          [karma-junit-reporter  "0.3.8"]]}
 
   :cljsbuild {:builds [{:id           "test"
                         :source-paths ["test" "src"]
                         :compiler     {:preloads             [devtools.preload]
-                                       :external-config      {:devtools/config {:features-to-install :all}}
+                                       :external-config      {:devtools/config {:features-to-install [:formatters :hints]}}
                                        :output-to     "run/compiled/browser/test.js"
                                        :source-map    true
                                        :output-dir    "run/compiled/browser/test"
