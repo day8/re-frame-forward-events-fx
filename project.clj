@@ -4,7 +4,7 @@
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure        "1.10.1"  :scope "provided"]
                  [org.clojure/clojurescript  "1.10.520" :scope "provided"]
-                 [re-frame                   "0.10.5" :scope "provided"]]
+                 [re-frame                   "0.10.6" :scope "provided"]]
 
   :profiles {:debug {:debug true}
              :dev   {:dependencies [[karma-reporter     "3.1.0"]
