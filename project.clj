@@ -3,7 +3,7 @@
   :url          "https://github.com/Day8/re-frame-forward-events-fx.git"
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure        "1.8.0"  :scope "provided"]
-                 [org.clojure/clojurescript  "1.9.89" :scope "provided"]
+                 [org.clojure/clojurescript  "1.10.520" :scope "provided"]
                  [re-frame                   "0.10.5" :scope "provided"]]
 
   :profiles {:debug {:debug true}
