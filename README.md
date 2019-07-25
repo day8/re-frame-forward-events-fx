@@ -93,3 +93,17 @@ Examples of use:
 When necessary, the value of `:forward-events` can also be a `list` of `maps`,
 with each map either registering or unregistering.
 
+## Testing
+
+To run the tests in a browser
+
+```
+lein dev
+```
+
+To run the tests with Karma (i.e. for continuous integration)
+
+```
+sudo npm -g install karma-cli
+lein ci
+```

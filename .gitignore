@@ -17,3 +17,5 @@ misc/
 .floo
 .flooignore
 node_modules/
+/resources/public/js/test/
+/.shadow-cljs/
