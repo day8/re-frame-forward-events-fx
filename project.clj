@@ -2,7 +2,7 @@
   :description  "A re-frame effects handler for listening-for and then post-processing dispatched events."
   :url          "https://github.com/Day8/re-frame-forward-events-fx.git"
   :license      {:name "MIT"}
-  :dependencies [[thheller/shadow-cljs       "2.8.45" :scope "provided"]
+  :dependencies [[thheller/shadow-cljs       "2.8.48" :scope "provided"]
                  [org.clojure/clojure        "1.10.1"  :scope "provided"]
                  [org.clojure/clojurescript  "1.10.520" :scope "provided"]
                  [re-frame                   "0.10.8" :scope "provided"]]
