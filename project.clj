@@ -9,6 +9,8 @@
                  [thheller/shadow-cljs "2.8.51" :scope "provided"]
                  [re-frame "0.10.9" :scope "provided"]]
 
+  :plugins [[lein-shadow "0.1.5"]]
+
   :profiles {:debug {:debug true}
              :dev   {:dependencies [[karma-reporter     "3.1.0"]
                                     [binaryage/devtools "0.9.10"]]
@@ -21,6 +23,21 @@
   :jvm-opts       ["-Xmx1g"]
   :source-paths   ["src"]
   :test-paths     ["test"]
+
+  :shadow-cljs {:nrepl  {:port 8777}
+
+                :builds {:browser-test
+                         {:target    :browser-test
+                          :ns-regexp "-test$"
+                          :test-dir  "resources/public/js/test"
+                          :devtools  {:http-root "resources/public/js/test"
+                                      :http-port 8290
+                                      :preloads  [devtools.preload]}}
+
+                         :karma-test
+                         {:target    :karma
+                          :ns-regexp "-test$"
+                          :output-to "target/karma-test.js"}}}
 
   :shell          {:commands {"open" {:windows ["cmd" "/c" "start"]
                                       :macosx  "open"
@@ -40,10 +57,7 @@
                   ["vcs" "commit"]
                   ["vcs" "push"]]
 
-  :aliases {"dev" ["do"
-                   ["shell" "npm" "install"]
-                   ["run" "-m" "shadow.cljs.devtools.cli" "watch" "browser-test"]]
-            "ci" ["do"
-                  ["shell" "npm" "install"]
-                  ["run" "-m" "shadow.cljs.devtools.cli" "compile" "ci"]
-                  ["shell" "karma" "start" "--single-run" "--reporters" "junit,dots"]]})
+  :aliases {"dev-auto" ["shadow" "watch" "browser-test"]
+            "test-once" ["do"
+                         ["shadow" "compile" "karma-test"]
+                         ["shell" "karma" "start" "--single-run" "--reporters" "junit,dots"]]})
