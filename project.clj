@@ -7,7 +7,7 @@
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library]]
                  [thheller/shadow-cljs "2.8.51" :scope "provided"]
-                 [re-frame                   "0.10.8" :scope "provided"]]
+                 [re-frame "0.10.9" :scope "provided"]]
 
   :profiles {:debug {:debug true}
              :dev   {:dependencies [[karma-reporter     "3.1.0"]
