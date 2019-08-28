@@ -19,7 +19,6 @@
 
   :clean-targets  [:target-path
                    "resources/public/js/test"
-                   ".shadow-cljs"
                    "shadow-cljs.edn"
                    "package.json"
                    "package-lock.json"]
