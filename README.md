@@ -1,12 +1,12 @@
-[![GitHub license](https://img.shields.io/github/license/Day8/re-frame-forward-events-fx.svg)](license.txt)
-[![Circle CI](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/Day8/re-frame-forward-events-fx/tree/master)
+[![GitHub license](https://img.shields.io/github/license/day8/re-frame-forward-events-fx.svg)](license.txt)
+[![Circle CI](https://circleci.com/gh/day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/day8/re-frame-forward-events-fx/tree/master)
 <!--
-[![Sample Project](https://img.shields.io/badge/project-example-ff69b4.svg)](https://github.com/Day8/re-frame-forward-events-fx/sample)
+[![Sample Project](https://img.shields.io/badge/project-example-ff69b4.svg)](https://github.com/day8/re-frame-forward-events-fx/sample)
 -->
 
 # re-frame-forward-events-fx
 
-This re-frame library contains an [Effect Handler](https://github.com/Day8/re-frame/tree/develop/docs),
+This re-frame library contains an [Effect Handler](https://github.com/day8/re-frame/tree/develop/docs),
 keyed `:forward-events`, which allows you to listen-for, and then post-process events, typically for higher-level
 control flow purposes (eg. coordination).
 

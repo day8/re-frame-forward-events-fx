@@ -1,6 +1,6 @@
 (defproject day8.re-frame/forward-events-fx "0.0.7-SNAPSHOT"
   :description  "A re-frame effects handler for listening-for and then post-processing dispatched events."
-  :url          "https://github.com/Day8/re-frame-forward-events-fx.git"
+  :url          "https://github.com/day8/re-frame-forward-events-fx.git"
   :license      {:name "MIT"}
   :dependencies [[org.clojure/clojure "1.10.1" :scope "provided"]
                  [org.clojure/clojurescript "1.10.520" :scope "provided"
