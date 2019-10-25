@@ -1,5 +1,7 @@
-[![GitHub license](https://img.shields.io/github/license/day8/re-frame-forward-events-fx.svg)](license.txt)
-[![Circle CI](https://circleci.com/gh/day8/re-frame-forward-events-fx/tree/master.svg?style=shield&circle-token=:circle-ci-badge-token)](https://circleci.com/gh/day8/re-frame-forward-events-fx/tree/master)
+
+[![clojars](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
+[![license](https://img.shields.io/github/license/day8/re-frame-forward-events-fx.svg)](license.txt)
+[![ci](https://github.com/day8/re-frame-forward-events-fx/workflows/ci/badge.svg)](https://github.com/day8/re-frame-forward-events-fx/actions?workflow=ci)
 <!--
 [![Sample Project](https://img.shields.io/badge/project-example-ff69b4.svg)](https://github.com/day8/re-frame-forward-events-fx/sample)
 -->
@@ -15,7 +17,7 @@ control flow purposes (eg. coordination).
 ### Step 1. Add Dependency
 
 Add the following project dependency:  <br> 
-[![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
+[![clojars](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 
 Also requires re-frame >= v0.8.0
 
