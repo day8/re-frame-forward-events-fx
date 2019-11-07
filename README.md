@@ -1,4 +1,5 @@
 [![CI](https://github.com/day8/re-frame-forward-events-fx/workflows/ci/badge.svg)](https://github.com/day8/re-frame-forward-events-fx/actions?workflow=ci)
+[![CD](https://github.com/day8/re-frame-forward-events-fx/workflows/cd/badge.svg)](https://github.com/day8/re-frame-forward-events-fx/actions?workflow=cd)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/day8/re-frame-forward-events-fx?style=flat)](https://github.com/day8/re-frame-forward-events-fx/tags)
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
 [![GitHub issues](https://img.shields.io/github/issues-raw/day8/re-frame-forward-events-fx?style=flat)](https://github.com/day8/re-frame-forward-events-fx/issues)
