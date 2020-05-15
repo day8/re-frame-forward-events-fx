@@ -12,7 +12,7 @@
                  [re-frame                  "0.12.0" :scope "provided"]]
 
   :plugins      [[day8/lein-git-inject "0.0.11"]
-                 [lein-shadow          "0.1.7"]]
+                 [lein-shadow          "0.2.0"]]
 
   :middleware   [leiningen.git-inject/middleware]
 
