@@ -17,8 +17,7 @@
   :middleware   [leiningen.git-inject/middleware]
 
   :profiles {:debug {:debug true}
-             :dev   {:dependencies [[karma-reporter     "3.1.0"]
-                                    [binaryage/devtools "1.0.0"]]
+             :dev   {:dependencies [[binaryage/devtools "1.0.2"]]
                      :plugins      [[lein-ancient "0.6.15"]
                                     [lein-shell   "0.5.0"]]}}
 
