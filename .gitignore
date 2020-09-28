@@ -20,5 +20,3 @@ node_modules/
 /resources/public/js/test/
 /.shadow-cljs/
 /shadow-cljs.edn
-/package.json
-/package-lock.json

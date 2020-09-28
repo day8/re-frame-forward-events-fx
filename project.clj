@@ -12,7 +12,7 @@
                  [re-frame                  "1.1.1" :scope "provided"]]
 
   :plugins      [[day8/lein-git-inject "0.0.14"]
-                 [lein-shadow          "0.2.2"]]
+                 [lein-shadow          "0.3.1"]]
 
   :middleware   [leiningen.git-inject/middleware]
 
@@ -24,8 +24,7 @@
   :clean-targets [:target-path
                   "resources/public/js/test"
                   "shadow-cljs.edn"
-                  "package.json"
-                  "package-lock.json"]
+                  "node_modules"]
 
   :resource-paths ["run/resources"]
   :jvm-opts ["-Xmx1g"]
