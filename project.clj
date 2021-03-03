@@ -3,13 +3,13 @@
   :url         "https://github.com/day8/re-frame-forward-events-fx.git"
   :license     {:name "MIT"}
 
-  :dependencies [[org.clojure/clojure       "1.10.2" :scope "provided"]
+  :dependencies [[org.clojure/clojure       "1.10.2"   :scope "provided"]
                  [org.clojure/clojurescript "1.10.773" :scope "provided"
                   :exclusions [com.google.javascript/closure-compiler-unshaded
                                org.clojure/google-closure-library
                                org.clojure/google-closure-library-third-party]]
-                 [thheller/shadow-cljs      "2.11.18" :scope "provided"]
-                 [re-frame                  "1.1.1" :scope "provided"]]
+                 [thheller/shadow-cljs      "2.11.18"  :scope "provided"]
+                 [re-frame                  "1.2.0"    :scope "provided"]]
 
   :plugins      [[day8/lein-git-inject "0.0.14"]
                  [lein-shadow          "0.3.1"]]
