@@ -3,7 +3,7 @@
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/day8/re-frame-forward-events-fx?style=flat)](https://github.com/day8/re-frame-forward-events-fx/tags) -->
 [![Clojars Project](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx?style=for-the-badge&logo=clojure&logoColor=fff)](https://clojars.org/day8.re-frame/forward-events-fx)
 [![GitHub issues](https://img.shields.io/github/issues-raw/day8/re-frame-forward-events-fx?style=for-the-badge&logo=github)](https://github.com/day8/re-frame-forward-events-fx/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/day8/re-frame-forward-events-fx?style=for-the-badge&logo=github)](https://github.com/day8/re-frame-forward-events-fx/pulls)
+<!-- [![GitHub pull requests](https://img.shields.io/github/issues-pr/day8/re-frame-forward-events-fx?style=for-the-badge&logo=github)](https://github.com/day8/re-frame-forward-events-fx/pulls) -->
 [![License](https://img.shields.io/github/license/day8/re-frame-forward-events-fx?style=for-the-badge)](license.txt)
 <!--
 [![Sample Project](https://img.shields.io/badge/project-example-ff69b4.svg)](https://github.com/day8/re-frame-forward-events-fx/sample)
