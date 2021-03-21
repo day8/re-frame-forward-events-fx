@@ -20,7 +20,7 @@ control flow purposes (eg. coordination).
 ### Step 1. Add Dependency
 
 Add the following project dependency:  <br> 
-[![clojars](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx.svg)](https://clojars.org/day8.re-frame/forward-events-fx)
+[![clojars](https://img.shields.io/clojars/v/day8.re-frame/forward-events-fx?style=for-the-badge&logo=clojure&logoColor=fff)](https://clojars.org/day8.re-frame/forward-events-fx)
 
 Also requires re-frame >= v0.8.0
 
